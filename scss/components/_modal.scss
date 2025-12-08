@@ -1,0 +1,137 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal;
+  @include flex(center, center);
+  padding: $gap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all $transition;
+  
+  &.active { opacity: 1; visibility: visible; }
+  
+  &__overlay {
+    @include cover;
+    background: rgba($dark, .8);
+    backdrop-filter: blur(4px);
+  }
+  
+  &__container {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    background: $white;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    transform: scale(.95) translateY(20px);
+    transition: transform $transition;
+  }
+  
+  &.active &__container { transform: scale(1) translateY(0); }
+  
+  &__content { padding: 40px; }
+  
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    @include flex(center, center);
+    width: 40px;
+    height: 40px;
+    background: $gray-100;
+    border-radius: 50%;
+    transition: all $transition;
+    
+    .material-icons { font-size: 20px; color: $gray-600; }
+    &:hover { background: $gray-200; }
+  }
+  
+  &__icon {
+    @include flex(center, center);
+    width: 72px;
+    height: 72px;
+    background: rgba($primary, .1);
+    border-radius: 50%;
+    margin: 0 auto 24px;
+    
+    .material-icons { font-size: 36px; color: $primary; }
+  }
+  
+  &__title {
+    @include heading(28px);
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  
+  &__subtitle {
+    text-align: center;
+    color: $gray-500;
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+  
+  &__privacy {
+    text-align: center;
+    font-size: 12px;
+    color: $gray-500;
+    margin-top: 16px;
+    
+    a { color: $primary; &:hover { text-decoration: underline; } }
+  }
+  
+  &__success {
+    text-align: center;
+    padding: 20px 0;
+    
+    .material-icons { font-size: 64px; color: $success; margin-bottom: 16px; }
+    h4 { @include heading(24px); margin-bottom: 8px; }
+    p { color: $gray-500; }
+  }
+}
+
+// === FORMS ===
+.form-group {
+  position: relative;
+  margin-bottom: 16px;
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 16px 20px;
+    background: $gray-50;
+    border: 2px solid transparent;
+    border-radius: $radius;
+    font-size: 15px;
+    transition: all $transition;
+    
+    &::placeholder { color: $gray-400; }
+    &:focus { outline: none; border-color: $primary; background: $white; }
+  }
+  
+  select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23737373' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+  
+  textarea { min-height: 120px; resize: vertical; }
+  
+  .material-icons {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $gray-400;
+    pointer-events: none;
+  }
+}
+
+.form-privacy {
+  text-align: center;
+  font-size: 12px;
+  color: $gray-500;
+  margin-top: 16px;
+  
+  a { color: $primary; &:hover { text-decoration: underline; } }
+}

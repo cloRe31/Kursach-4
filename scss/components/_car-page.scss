@@ -1,0 +1,215 @@
+.car-page {
+  padding-top: 100px;
+}
+
+.breadcrumbs {
+  @include flex(flex-start, center, 8px);
+  padding: 24px 0;
+  font-size: 14px;
+  
+  a { color: $gray-500; &:hover { color: $primary; } }
+  span { color: $gray-400; }
+  .material-icons { font-size: 18px; color: $gray-400; }
+}
+
+.car-hero {
+  @include grid(2, 60px);
+  padding: 40px 0 80px;
+  
+  @include lg { grid-template-columns: 1fr; gap: 40px; }
+  
+  &__gallery {
+    position: relative;
+  }
+  
+  &__main {
+    position: relative;
+    background: linear-gradient(180deg, $gray-50 0%, $gray-100 100%);
+    border-radius: $radius-lg;
+    padding: 40px;
+    @include flex(center, center);
+    min-height: 400px;
+    
+    img {
+      max-height: 320px;
+      width: auto;
+      object-fit: contain;
+      transition: opacity $transition;
+    }
+  }
+  
+  &__badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 8px 16px;
+    background: $primary;
+    color: $white;
+    font-family: $font-medium;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: $radius-sm;
+  }
+  
+  &__colors {
+    margin-top: 24px;
+    
+    &-label {
+      display: block;
+      font-size: 13px;
+      color: $gray-500;
+      margin-bottom: 12px;
+    }
+    
+    &-list {
+      @include flex(flex-start, center, 8px);
+      flex-wrap: wrap;
+    }
+    
+    &-name {
+      display: block;
+      font-size: 14px;
+      color: $gray-600;
+      margin-top: 12px;
+    }
+  }
+  
+  &__info {
+    padding-top: 20px;
+  }
+  
+  &__brand {
+    font-size: 14px;
+    color: $gray-500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  
+  &__title {
+    @include heading(48px);
+    margin-bottom: 24px;
+    @include md { font-size: 36px; }
+  }
+  
+  &__price {
+    margin-bottom: 24px;
+    
+    &-label {
+      display: block;
+      font-size: 13px;
+      color: $gray-500;
+      margin-bottom: 4px;
+    }
+    
+    &-value {
+      font-family: $font-bold;
+      font-size: 36px;
+      color: $primary;
+    }
+  }
+  
+  &__specs {
+    @include flex(flex-start, center, 24px);
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  
+  &__spec {
+    @include flex(center, center, 8px);
+    padding: 12px 20px;
+    background: $gray-50;
+    border-radius: $radius;
+    font-size: 14px;
+    
+    .material-icons { font-size: 20px; color: $gray-500; }
+  }
+  
+  &__actions {
+    @include flex(flex-start, stretch, 12px);
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+  
+  &__benefits {
+    @include flex(flex-start, center, 24px);
+    flex-wrap: wrap;
+  }
+  
+  &__benefit {
+    @include flex(center, center, 8px);
+    font-size: 14px;
+    color: $gray-600;
+    
+    .material-icons { font-size: 20px; color: $success; }
+  }
+}
+
+.color-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid $white;
+  box-shadow: 0 0 0 1px $gray-300;
+  cursor: pointer;
+  transition: all $transition;
+  
+  &:hover { transform: scale(1.1); }
+  
+  &.active {
+    box-shadow: 0 0 0 2px $primary;
+  }
+}
+
+// === SPECS TABLE ===
+.specs-table {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.specs-row {
+  @include flex(space-between, center);
+  padding: 16px 0;
+  border-bottom: 1px solid $gray-200;
+  
+  &:last-child { border: none; }
+}
+
+.specs-label {
+  font-size: 15px;
+  color: $gray-500;
+}
+
+.specs-value {
+  font-family: $font-medium;
+  font-size: 15px;
+}
+
+// === GALLERY ===
+.gallery {
+  &__main {
+    position: relative;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    margin-bottom: 16px;
+    
+    img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+  }
+  
+  &__thumbs {
+    @include grid(5, 12px);
+    @include sm { grid-template-columns: repeat(4, 1fr); }
+  }
+  
+  &__thumb {
+    border-radius: $radius;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: .6;
+    transition: opacity $transition;
+    
+    &.active, &:hover { opacity: 1; }
+    
+    img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  }
+}
