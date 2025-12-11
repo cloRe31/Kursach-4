@@ -60,7 +60,6 @@ harbor/
    ```
 
 ## Компиляция SCSS
-
 ```bash
 # Однократная компиляция
 sass scss/main.scss public/css/style.css --style=compressed
@@ -88,7 +87,6 @@ sass --watch scss/main.scss:public/css/style.css
 - Уведомления в Telegram
 
 ## SEO
-
 - Семантическая HTML5 разметка
 - Schema.org (AutoDealer, Car, Offer)
 - Open Graph теги
@@ -97,18 +95,15 @@ sass --watch scss/main.scss:public/css/style.css
 - Lazy loading изображений
 
 ## Библиотеки
-
 - [Swiper](https://swiperjs.com/) — слайдеры
 - [GSAP](https://greensock.com/gsap/) — анимации
 - [Lenis](https://lenis.studiofreight.com/) — smooth scroll
 - [Material Icons](https://fonts.google.com/icons) — иконки
 
 ## Админ-панель
-
 - URL: `/admin/`
 - Логин: `admin`
 - Пароль: `password`
 
 ## Лицензия
-
 MIT
