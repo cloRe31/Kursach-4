@@ -326,25 +326,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // === CUSTOM CURSOR ===
-  if (!isTouch && !isMobile) {
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    cursor.innerHTML = '<div class="cursor-dot"></div><div class="cursor-ring"></div>';
-    document.body.appendChild(cursor);
+  // if (!isTouch && !isMobile) {
+  //   const cursor = document.createElement('div');
+  //   cursor.className = 'custom-cursor';
+  //   cursor.innerHTML = '<div class="cursor-dot"></div><div class="cursor-ring"></div>';
+  //   document.body.appendChild(cursor);
     
-    let mx = 0, my = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  //   let mx = 0, my = 0;
+  //   document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
     
-    gsap.ticker.add(() => {
-      gsap.set('.cursor-dot', { x: mx, y: my });
-      gsap.to('.cursor-ring', { x: mx, y: my, duration: 0.15 });
-    });
+  //   gsap.ticker.add(() => {
+  //     gsap.set('.cursor-dot', { x: mx, y: my });
+  //     gsap.to('.cursor-ring', { x: mx, y: my, duration: 0.15 });
+  //   });
 
-    document.querySelectorAll('a, button').forEach(el => {
-      el.addEventListener('mouseenter', () => gsap.to('.cursor-ring', { scale: 1.8, opacity: 0.5, duration: 0.3 }));
-      el.addEventListener('mouseleave', () => gsap.to('.cursor-ring', { scale: 1, opacity: 1, duration: 0.3 }));
-    });
-  }
+  //   document.querySelectorAll('a, button').forEach(el => {
+  //     el.addEventListener('mouseenter', () => gsap.to('.cursor-ring', { scale: 1.8, opacity: 0.5, duration: 0.3 }));
+  //     el.addEventListener('mouseleave', () => gsap.to('.cursor-ring', { scale: 1, opacity: 1, duration: 0.3 }));
+  //   });
+  // }
 
   window.addEventListener('load', () => ScrollTrigger.refresh());
 });
