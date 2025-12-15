@@ -312,11 +312,11 @@ function formatPrice(int $price): string {
 
 function getBanks(): array {
     return [
-        ['name' => 'Сбербанк'],
-        ['name' => 'ВТБ'],
-        ['name' => 'Альфа-Банк'],
-        ['name' => 'Газпромбанк'],
-        ['name' => 'Тинькофф'],
-        ['name' => 'Росбанк'],
+        ['svg' => 'sber','name' => 'Сбербанк'],
+        ['svg' => 'vtb','name' => 'ВТБ'],
+        ['svg' => 'alfa','name' => 'Альфа-Банк'],
+        ['svg' => 'gazprom','name' => 'Газпромбанк'],
+        ['svg' => 'tinkoff','name' => 'Тинькофф'],
+        ['svg' => 'rosbank','name' => 'Росбанк'],
     ];
 }

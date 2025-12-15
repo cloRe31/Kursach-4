@@ -101,7 +101,7 @@ include __DIR__ . '/../templates/components/header.php';
         <div class="banks-grid">
             <?php foreach ($banks as $bank): ?>
             <div class="bank-card">
-                <img src="/img/banks/<?= strtolower(str_replace([' ', '-'], '', $bank['name'])) ?>.svg" alt="<?= e($bank['name']) ?>" loading="lazy">
+                <img src="./img/banks/<?= strtolower(str_replace([' ', '-'], '', $bank['svg'])) ?>.svg" alt="<?= e($bank['name']) ?>" loading="lazy">
             </div>
             <?php endforeach; ?>
         </div>
