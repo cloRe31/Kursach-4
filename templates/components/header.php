@@ -38,7 +38,10 @@
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://unpkg.com/gsap@3/dist">
+    <link rel="preload" href="https://unpkg.com/gsap@3/dist/gsap.min.js" as="script">
+    <link rel="preload" href="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" as="script">
+
     
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap">

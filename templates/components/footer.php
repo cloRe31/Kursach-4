@@ -109,10 +109,10 @@
     
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script src="/js/animations.js"></script>
-    <script src="/js/app.js"></script>
+    <!--<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>-->
+    <script async src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script defer src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script async src="/js/animations.js"></script>
+    <script defer src="/js/app.js"></script>
 </body>
 </html>
