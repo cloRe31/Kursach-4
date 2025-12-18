@@ -101,7 +101,7 @@
                 <div class="modal__success" style="display:none">
                     <span class="material-icons">check_circle</span>
                     <h4>Заявка отправлена!</h4>
-                    <p>Мы перезвоним вам в ближайшее время</p>
+                    <p>Мы перезвоним вам в ближайшее времяz</p>
                 </div>
             </div>
         </div>
