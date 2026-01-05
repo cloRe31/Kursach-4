@@ -1,0 +1,21 @@
+// === BASE ===
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/reset';
+@import 'base/buttons';
+@import 'base/animations';
+
+// === LAYOUT ===
+@import 'layout/header';
+@import 'layout/footer';
+
+// === COMPONENTS ===
+@import 'components/hero';
+@import 'components/sections';
+@import 'components/cards';
+@import 'components/modal';
+@import 'components/slider';
+@import 'components/car-page';
+
+// === PAGES ===
+@import 'pages/pages';

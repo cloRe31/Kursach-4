@@ -1,0 +1,259 @@
+.section {
+  padding: 100px 0;
+  @include lg { padding: 80px 0; }
+  @include md { padding: 60px 0; }
+  
+  &--dark { background: $dark; color: $white; }
+  &--gray { background: $gray-50; }
+  
+  &__header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    @include md { margin-bottom: 40px; }
+  }
+  
+  &__label {
+    display: inline-block;
+    font-family: $font-medium;
+    font-size: 13px;
+    color: $primary;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+  
+  &__title {
+    @include heading(42px);
+    margin-bottom: 16px;
+    @include lg { font-size: 36px; }
+    @include md { font-size: 28px; }
+  }
+  
+  &__subtitle {
+    font-size: 17px;
+    color: $gray-500;
+    line-height: 1.7;
+  }
+}
+
+// === BENEFITS ===
+.benefits {
+  @include grid(3, 24px);
+  @include lg { grid-template-columns: repeat(2, 1fr); }
+  @include sm { grid-template-columns: 1fr; }
+}
+
+.benefit {
+  padding: 32px;
+  background: $white;
+  border-radius: $radius-lg;
+  border: 1px solid $gray-200;
+  transition: all $transition;
+  
+  &:hover {
+    border-color: $primary;
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+    
+    .benefit__icon { 
+      background: $primary;
+      img { filter: brightness(0) invert(1); }
+      .material-icons { color: $white; }
+    }
+  }
+  
+  &__icon {
+    @include flex(center, center);
+    width: 56px;
+    height: 56px;
+    background: rgba($primary, .1);
+    border-radius: $radius;
+    margin-bottom: 20px;
+    transition: all $transition;
+    
+    img { width: 28px; height: 28px; transition: filter $transition; }
+    .material-icons { font-size: 28px; color: $primary; transition: color $transition; }
+  }
+  
+  &__title {
+    font-family: $font-bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  &__text {
+    font-size: 14px;
+    color: $gray-500;
+    line-height: 1.7;
+  }
+}
+
+// === OFFERS ===
+.offers {
+  @include grid(3, 24px);
+  @include lg { grid-template-columns: 1fr; }
+}
+
+.offer {
+  position: relative;
+  padding: 40px;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  min-height: 280px;
+  @include flex(flex-start, flex-start);
+  flex-direction: column;
+  
+  &::before {
+    content: '';
+    @include cover;
+    z-index: -1;
+    transition: transform $transition;
+  }
+  
+  &:hover::before { transform: scale(1.05); }
+  
+  &--credit {
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f1f33 100%);
+    color: $white;
+  }
+  
+  &--tradein {
+    background: linear-gradient(135deg, #14532d 0%, #0a2918 100%);
+    color: $white;
+  }
+  
+  &--gift {
+    background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+    color: $white;
+  }
+  
+  &__icon {
+    @include flex(center, center);
+    width: 60px;
+    height: 60px;
+    background: rgba($white, .15);
+    border-radius: $radius;
+    margin-bottom: 20px;
+    
+    .material-icons { font-size: 28px; }
+  }
+  
+  &__title {
+    font-family: $font-bold;
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  
+  &__text {
+    font-size: 15px;
+    opacity: .8;
+    line-height: 1.6;
+    margin-bottom: auto;
+  }
+  
+  .btn { margin-top: 24px; }
+}
+
+// === STEPS ===
+.steps {
+  @include grid(4, 24px);
+  counter-reset: step;
+  @include lg { grid-template-columns: repeat(2, 1fr); }
+  @include sm { grid-template-columns: 1fr; }
+}
+
+.step {
+  position: relative;
+  padding: 32px;
+  background: $white;
+  border-radius: $radius-lg;
+  border: 1px solid $gray-200;
+  counter-increment: step;
+  
+  &::before {
+    content: counter(step);
+    position: absolute;
+    top: -16px;
+    left: 32px;
+    @include flex(center, center);
+    width: 32px;
+    height: 32px;
+    background: $primary;
+    color: $white;
+    font-family: $font-bold;
+    font-size: 14px;
+    border-radius: 50%;
+  }
+  
+  &__title {
+    font-family: $font-bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+  
+  &__text {
+    font-size: 14px;
+    color: $gray-500;
+    line-height: 1.7;
+  }
+}
+
+// === CONTACT ===
+.contact {
+  @include grid(2, 60px);
+  @include lg { grid-template-columns: 1fr; gap: 40px; }
+  
+  &__info {
+    h2 { @include heading(36px); margin-bottom: 24px; }
+  }
+  
+  &__items {
+    @include flex(flex-start, flex-start, 24px);
+    flex-direction: column;
+  }
+  
+  &__item {
+    @include flex(flex-start, flex-start, 16px);
+    
+    .material-icons {
+      @include flex(center, center);
+      width: 48px;
+      height: 48px;
+      background: rgba($primary, .1);
+      color: $primary;
+      border-radius: $radius;
+      flex-shrink: 0;
+    }
+    
+    strong { display: block; font-family: $font-bold; margin-bottom: 4px; }
+    p, a { color: $gray-600; font-size: 15px; }
+    a:hover { color: $primary; }
+  }
+  
+  &__form {
+    background: $white;
+    padding: 40px;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    
+    h3 { @include heading(24px); margin-bottom: 24px; }
+  }
+}
+
+// === CTA ===
+.cta {
+  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+  padding: 80px 0;
+  text-align: center;
+  color: $white;
+  
+  &__content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  h2 { @include heading(36px); margin-bottom: 16px; }
+  p { font-size: 17px; opacity: .9; margin-bottom: 32px; }
+}

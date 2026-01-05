@@ -1,0 +1,96 @@
+.prefooter {
+  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+  padding: 60px 0;
+  
+  &__inner {
+    @include flex(space-between, center, 40px);
+    @include md { flex-direction: column; text-align: center; }
+  }
+  
+  &__content {
+    h2 { @include heading(32px); color: $white; margin-bottom: 8px; }
+    p { color: rgba($white, .8); font-size: 16px; }
+  }
+}
+
+.footer {
+  background: $dark;
+  color: $white;
+  padding: 80px 0 0;
+  
+  &__grid {
+    @include grid(4, 40px);
+    padding-bottom: 60px;
+    border-bottom: 1px solid $gray-800;
+    
+    @include lg { grid-template-columns: repeat(2, 1fr); }
+    @include sm { grid-template-columns: 1fr; }
+  }
+  
+  &__logo {
+    font-family: $font-bold;
+    font-size: 28px;
+    display: block;
+    margin-bottom: 16px;
+  }
+  
+  &__desc {
+    color: $gray-500;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  
+  &__social {
+    @include flex(flex-start, center, 12px);
+    
+    a {
+      @include flex(center, center);
+      width: 40px;
+      height: 40px;
+      background: $gray-800;
+      border-radius: 50%;
+      transition: all $transition;
+      
+      img { width: 20px; height: 20px; }
+      &:hover { background: $primary; transform: translateY(-2px); }
+    }
+  }
+  
+  &__title {
+    font-family: $font-bold;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  &__nav {
+    @include flex(flex-start, flex-start, 12px);
+    flex-direction: column;
+    
+    a {
+      color: $gray-400;
+      font-size: 14px;
+      transition: color $transition;
+      &:hover { color: $white; }
+    }
+  }
+  
+  &__contact {
+    @include flex(flex-start, flex-start, 12px);
+    margin-bottom: 16px;
+    
+    .material-icons { color: $primary; font-size: 20px; margin-top: 2px; }
+    
+    a, span { color: $gray-400; font-size: 14px; }
+    a:hover { color: $white; }
+  }
+  
+  &__bottom {
+    @include flex(space-between, center);
+    padding: 24px 0;
+    
+    @include md { flex-direction: column; gap: 8px; text-align: center; }
+    
+    p { color: $gray-600; font-size: 13px; }
+  }
+}

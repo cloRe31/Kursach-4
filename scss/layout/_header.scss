@@ -1,0 +1,155 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-header;
+  padding: 16px 0;
+  transition: all $transition;
+  
+  // По умолчанию на светлом фоне
+  &__logo { color: $gray-900; }
+  &__link { color: $gray-600; &:hover, &.active { color: $gray-900; } }
+  &__phone { color: $gray-900; }
+  &__burger span { background: $gray-900; }
+  
+  // На тёмном фоне (hero)
+  &--dark {
+    .header__logo { color: $white; }
+    .header__link { color: rgba($white, .8); &:hover, &.active { color: $white; } }
+    .header__phone { color: $white; }
+    .header__burger span { background: $white; }
+  }
+  
+  // При скролле
+  &--scrolled {
+    @include glass(20px, rgba($dark, .95));
+    padding: 12px 0;
+    .header__logo { color: $white; }
+    .header__link { color: rgba($white, .8); &:hover, &.active { color: $white; } }
+    .header__phone { color: $white; }
+    .header__burger span { background: $white; }
+  }
+  
+  &--hidden { transform: translateY(-100%); }
+  
+  &__inner {
+    @include flex(space-between, center);
+  }
+  
+  &__logo {
+    font-family: $font-bold;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    transition: color $transition;
+  }
+  
+  &__nav {
+    @include flex(center, center, 32px);
+    @include lg { display: none; }
+  }
+  
+  &__link {
+    font-family: $font-medium;
+    font-size: 14px;
+    transition: color $transition;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $primary;
+      transition: width $transition;
+    }
+    
+    &:hover, &.active {
+      &::after { width: 100%; }
+    }
+  }
+  
+  &__actions {
+    @include flex(flex-end, center, 20px);
+    @include md { display: none; }
+  }
+  
+  &__phone {
+    @include flex(center, center, 8px);
+    font-family: $font-medium;
+    font-size: 14px;
+    transition: color $transition;
+    .material-icons { font-size: 18px; }
+  }
+  
+  &__burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    @include lg { display: flex; }
+    
+    span {
+      width: 24px;
+      height: 2px;
+      transition: all $transition;
+    }
+    
+    &.active {
+      span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      span:nth-child(2) { opacity: 0; }
+      span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    }
+  }
+}
+
+// === MOBILE MENU ===
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: $z-menu;
+  background: $dark;
+  opacity: 0;
+  visibility: hidden;
+  transition: all $transition;
+  
+  &.active { opacity: 1; visibility: visible; }
+  
+  &__inner {
+    @include flex(center, center, 0);
+    flex-direction: column;
+    height: 100%;
+    padding: 100px $gap $gap;
+  }
+  
+  &__nav {
+    @include flex(center, center, 0);
+    flex-direction: column;
+    
+    a {
+      font-family: $font-bold;
+      font-size: 32px;
+      color: $white;
+      padding: 12px 0;
+      transition: color $transition;
+      &:hover { color: $primary; }
+    }
+  }
+  
+  &__footer {
+    margin-top: auto;
+    text-align: center;
+    
+    a {
+      display: block;
+      font-family: $font-bold;
+      font-size: 24px;
+      color: $white;
+      margin-bottom: 8px;
+    }
+    
+    p { color: $gray-500; font-size: 14px; }
+  }
+}
