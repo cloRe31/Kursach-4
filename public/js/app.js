@@ -83,7 +83,7 @@
         });
         const data = await res.json();
 
-        if (data.ok) {
+        if (data.success) {
           if (form.closest('.modal')) {
             modalForm.style.display = 'none';
             modalSuccess.style.display = 'block';
