@@ -1,11 +1,11 @@
 <?php
 /**
- * Конфигурация сайта автосалона Харбор
+ * Конфигурация сайта автосалона Vagones
  */
 
-define('SITE_NAME', 'Харбор');
-define('SITE_TITLE', 'Автосалон Харбор в Москве | Официальный дилер Chery и Kia');
-define('SITE_DESCRIPTION', 'Автосалон Харбор — официальный дилер Chery и Kia в Москве. Продажа автомобилей, Trade-in, гарантия до 10 лет.');
+define('SITE_NAME', 'Vagones');
+define('SITE_TITLE', 'Автосалон Vagones в Москве | Официальный дилер Chery и Kia');
+define('SITE_DESCRIPTION', 'Автосалон Vagones — официальный дилер Chery и Kia в Москве. Продажа автомобилей, Trade-in, гарантия до 10 лет.');
 define('SITE_KEYWORDS', 'автосалон, автомобиль, машина, chery, kia, trade-in, трейд-ин, москва');
 
 define('PHONE', '+7 (906) 607-47-55');
