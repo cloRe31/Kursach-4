@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/public_html/css/main.css">
     
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -90,10 +90,10 @@
                 <nav class="header__nav" aria-label="Основная навигация">
                     <a href="/" class="header__link">Главная</a>
                     <a href="/#catalog" class="header__link">Каталог</a>
-                    <a href="/credit.php" class="header__link">Кредит</a>
-                    <a href="/tradein.php" class="header__link">Trade-in</a>
-                    <a href="/about.php" class="header__link">О нас</a>
-                    <a href="/contacts.php" class="header__link">Контакты</a>
+                    <a href="/public_html/credit.php" class="header__link">Кредит</a>
+                    <a href="/public_html/tradein.php" class="header__link">Trade-in</a>
+                    <a href="/public_html/about.php" class="header__link">О нас</a>
+                    <a href="/public_html/contacts.php" class="header__link">Контакты</a>
                 </nav>
                 
                 <div class="header__actions">
@@ -116,10 +116,10 @@
             <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
                 <a href="/">Главная</a>
                 <a href="/#catalog">Каталог</a>
-                <a href="/credit.php">Кредит</a>
-                <a href="/tradein.php">Trade-in</a>
-                <a href="/about.php">О нас</a>
-                <a href="/contacts.php">Контакты</a>
+                <a href="/public_html/credit.php">Кредит</a>
+                <a href="/public_html/tradein.php">Trade-in</a>
+                <a href="/public_html/about.php">О нас</a>
+                <a href="/public_html/contacts.php">Контакты</a>
             </nav>
             <div class="mobile-menu__footer">
                 <a href="tel:<?= PHONE_RAW ?>"><?= PHONE ?></a>

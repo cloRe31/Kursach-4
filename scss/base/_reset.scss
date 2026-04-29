@@ -1,22 +1,22 @@
 // === FONTS ===
 @font-face {
   font-family: 'Tactic Round Regular';
-  src: url('/fonts/TacticRoundRegular/TacticRound-Reg.woff2') format('woff2');
+  src: url('/public_html/fonts/TacticRoundRegular/TacticRound-Reg.woff2') format('woff2');
   font-display: swap;
 }
 @font-face {
   font-family: 'Tactic Round Medium';
-  src: url('/fonts/TacticRoundMedium/TacticRound-Med.woff2') format('woff2');
+  src: url('/public_html/fonts/TacticRoundMedium/TacticRound-Med.woff2') format('woff2');
   font-display: swap;
 }
 @font-face {
   font-family: 'Tactic Round Bold';
-  src: url('/fonts/TacticRoundBold/TacticRound-Bld.woff2') format('woff2');
+  src: url('/public_html/fonts/TacticRoundBold/TacticRound-Bld.woff2') format('woff2');
   font-display: swap;
 }
 @font-face {
   font-family: 'Tactic Round Light';
-  src: url('/fonts/TacticRoundLight/TacticRound-Lgt.woff2') format('woff2');
+  src: url('/public_html/fonts/TacticRoundLight/TacticRound-Lgt.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -27,7 +27,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  &.lenis { height: auto; }
+  &.lenis { height: auto; } 
 }
 
 body {

@@ -77,13 +77,16 @@
       btn.innerHTML = '<span class="material-icons spinning">sync</span>';
 
       try {
-        const res = await fetch('/api/lead.php', {
+        const res = await fetch('/public_html/api/lead.php', {
           method: 'POST',
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+          },
           body: new FormData(form)
         });
         const data = await res.json();
 
-        if (data.ok) {
+        if (data.ok || data.success) {
           if (form.closest('.modal')) {
             modalForm.style.display = 'none';
             modalSuccess.style.display = 'block';

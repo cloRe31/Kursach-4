@@ -24,8 +24,8 @@
                     <a href="/" class="footer__logo"><?= SITE_NAME ?></a>
                     <p class="footer__desc">Официальный дилер Chery и Kia в Москве. Продажа, кредит, trade-in, сервис.</p>
                     <div class="footer__social">
-                        <a href="#" aria-label="Telegram"><img src="/svg/TELEGRAM LOGO.svg" alt="" width="20" height="20"></a>
-                        <a href="#" aria-label="VK"><img src="/svg/VK LOGO.svg" alt="" width="20" height="20"></a>
+                        <a href="#" aria-label="Telegram"><img src="/public_html/svg/TELEGRAM LOGO.svg" alt="" width="20" height="20"></a>
+                        <a href="#" aria-label="VK"><img src="/public_html/svg/VK LOGO.svg" alt="" width="20" height="20"></a>
                     </div>
                 </div>
                 
@@ -41,11 +41,11 @@
                 <div>
                     <h4 class="footer__title">Услуги</h4>
                     <nav class="footer__nav">
-                        <a href="/credit.php">Автокредит</a>
-                        <a href="/tradein.php">Trade-in</a>
-                        <a href="/about.php">О компании</a>
-                        <a href="/contacts.php">Контакты</a>
-                        <a href="/privacy.php">Политика конфиденциальности</a>
+                        <a href="/public_html/credit.php">Автокредит</a>
+                        <a href="/public_html/tradein.php">Trade-in</a>
+                        <a href="/public_html/about.php">О компании</a>
+                        <a href="/public_html/contacts.php">Контакты</a>
+                        <a href="/public_html/privacy.php">Политика конфиденциальности</a>
                     </nav>
                 </div>
                 
@@ -96,7 +96,7 @@
                     <input type="hidden" name="car" id="modalCar" value="">
                     <input type="hidden" name="type" value="callback">
                     <button type="submit" class="btn btn--primary btn--full btn--lg">Жду звонка</button>
-                    <p class="modal__privacy">Нажимая кнопку, вы соглашаетесь с <a href="/privacy.php">политикой конфиденциальности</a></p>
+                    <p class="modal__privacy">Нажимая кнопку, вы соглашаетесь с <a href="/public_html/privacy.php">политикой конфиденциальности</a></p>
                 </form>
                 <div class="modal__success" style="display:none">
                     <span class="material-icons">check_circle</span>
@@ -112,7 +112,7 @@
     <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script src="/js/animations.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="/public_html/js/animations.js"></script>
+    <script src="/public_html/js/app.js"></script>
 </body>
 </html>

@@ -293,7 +293,6 @@ function sendToTelegram(array $data): bool {
         CURLOPT_TIMEOUT => 10
     ]);
     $result = curl_exec($ch);
-    echo $result;
     curl_close($ch);
     return $result !== false;
 }

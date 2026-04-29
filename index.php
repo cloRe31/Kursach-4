@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../src/config/functions.php';
+require_once __DIR__ . '/src/config/functions.php';
 session_start();
 
 $pageTitle = SITE_TITLE;
@@ -7,7 +7,7 @@ $pageDescription = SITE_DESCRIPTION;
 $darkHeader = true;
 $cars = getCars();
 
-include __DIR__ . '/../templates/components/header.php';
+include __DIR__ . '/templates/components/header.php';
 ?>
 
 <!-- Hero -->
@@ -70,27 +70,27 @@ include __DIR__ . '/../templates/components/header.php';
         </div>
         <div class="benefits">
             <article class="benefit">
-                <div class="benefit__icon"><img src="/svg/ИКОНКА ЩИТ КРАСНАЯ.svg" alt="" width="28" height="28"></div>
+                <div class="benefit__icon"><img src="/public_html/svg/ИКОНКА ЩИТ КРАСНАЯ.svg" alt="" width="28" height="28"></div>
                 <h3 class="benefit__title">Официальная гарантия</h3>
                 <p class="benefit__text">Гарантия производителя до 10 лет или 1 000 000 км пробега</p>
             </article>
             <article class="benefit">
-                <div class="benefit__icon"><img src="/svg/ИКОНКА МОЛНИИ КРАСНАЯ.svg" alt="" width="28" height="28"></div>
+                <div class="benefit__icon"><img src="/public_html/svg/ИКОНКА МОЛНИИ КРАСНАЯ.svg" alt="" width="28" height="28"></div>
                 <h3 class="benefit__title">Быстрое оформление</h3>
                 <p class="benefit__text">Оформление документов за 1 день. Выезд в тот же день</p>
             </article>
             <article class="benefit">
-                <div class="benefit__icon"><img src="/svg/ИКОНКА ЛАЙК КРАСНАЯ.svg" alt="" width="28" height="28"></div>
+                <div class="benefit__icon"><img src="/public_html/svg/ИКОНКА ЛАЙК КРАСНАЯ.svg" alt="" width="28" height="28"></div>
                 <h3 class="benefit__title">Выгодные условия</h3>
                 <p class="benefit__text">Кредит от 0.1%, рассрочка без переплат, Trade-in</p>
             </article>
             <article class="benefit">
-                <div class="benefit__icon"><img src="/svg/ИКОНКА ОГНЯ КРАСНАЯ.svg" alt="" width="28" height="28"></div>
+                <div class="benefit__icon"><img src="/public_html/svg/ИКОНКА ОГНЯ КРАСНАЯ.svg" alt="" width="28" height="28"></div>
                 <h3 class="benefit__title">Подарки покупателям</h3>
                 <p class="benefit__text">Комплект резины, защита картера или скидка до 300 000 ₽</p>
             </article>
             <article class="benefit">
-                <div class="benefit__icon"><img src="/svg/ИКОНКА ПОВТОРА (СТРЕЛКИ) КРАСНАЯ.svg" alt="" width="28" height="28"></div>
+                <div class="benefit__icon"><img src="/public_html/svg/ИКОНКА ПОВТОРА (СТРЕЛКИ) КРАСНАЯ.svg" alt="" width="28" height="28"></div>
                 <h3 class="benefit__title">Trade-in</h3>
                 <p class="benefit__text">Обменяйте старый автомобиль с выгодой до 150 000 ₽</p>
             </article>
@@ -114,7 +114,7 @@ include __DIR__ . '/../templates/components/header.php';
         <div class="cars-grid">
             <?php foreach ($cars as $id => $car): ?>
             <article class="car-card" itemscope itemtype="https://schema.org/Car">
-                <a href="/car.php?id=<?= $id ?>" class="car-card__link">
+                <a href="/public_html/car.php?id=<?= $id ?>" class="car-card__link">
                     <?php if (!empty($car['is_new'])): ?>
                     <span class="car-card__badge">Новинка</span>
                     <?php endif; ?>
@@ -173,13 +173,13 @@ include __DIR__ . '/../templates/components/header.php';
                 <div class="offer__icon"><span class="material-icons">account_balance</span></div>
                 <h3 class="offer__title">Кредит от 0.1%</h3>
                 <p class="offer__text">Одобрение за 15 минут. Первый взнос от 0%. Срок до 8 лет.</p>
-                <a href="/credit.php" class="btn btn--outline-light">Рассчитать кредит</a>
+                <a href="/public_html/credit.php" class="btn btn--outline-light">Рассчитать кредит</a>
             </article>
             <article class="offer offer--tradein">
                 <div class="offer__icon"><span class="material-icons">sync_alt</span></div>
                 <h3 class="offer__title">Trade-in +150 000 ₽</h3>
                 <p class="offer__text">Обменяйте старый автомобиль на новый с дополнительной выгодой</p>
-                <a href="/tradein.php" class="btn btn--outline-light">Оценить авто</a>
+                <a href="/public_html/tradein.php" class="btn btn--outline-light">Оценить авто</a>
             </article>
             <article class="offer offer--gift">
                 <div class="offer__icon"><span class="material-icons">card_giftcard</span></div>
@@ -287,4 +287,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<?php include __DIR__ . '/../templates/components/footer.php'; ?>
+<?php include __DIR__ . '/templates/components/footer.php'; ?>
