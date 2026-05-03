@@ -14,8 +14,12 @@ define('ADDRESS', 'г. Москва, Прокшинский про-кт, 11');
 define('WORK_HOURS', 'Ежедневно с 9:00 до 21:00');
 
 // Telegram Bot
-define('TG_BOT_TOKEN', '8525422729:AAG2VoBTE1z-qNFJgDYfvml-ti9EGdfPEik');
-define('TG_CHAT_ID', '2097270123');
+define('TG_BOT_TOKEN', $_ENV['TG_BOT_TOKEN']);
+define('TG_CHAT_ID', $_ENV['TG_CHAT_ID']);
+
+// VK Bot
+define('VK_ACCESS_TOKEN', $_ENV['VK_ACCESS_TOKEN']);
+define('VK_USER_ID', $_ENV['VK_USER_ID']);
 
 // Пути
 define('ROOT_PATH', dirname(__DIR__, 2));

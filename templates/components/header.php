@@ -39,6 +39,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="dns-prefetch" href="https://unpkg.com">
+    <!-- <link rel="preconnect" href="https://unpkg.com/@vkid/sdk@2.6.1/dist-sdk/umd/index.js"> -->
     
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap">

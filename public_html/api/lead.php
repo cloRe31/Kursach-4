@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../../src/config/bootstrap.php';
+
 require_once __DIR__ . '/../../src/config/functions.php';
 
 header('Content-Type: application/json; charset=utf-8');
@@ -37,7 +39,7 @@ $data = [
 $saved = saveLead($data);
 
 // Отправляем в Telegram
-sendToTelegram($data);
+sendNotification($data);
 
 if ($saved) {
     // Если AJAX запрос

@@ -3,7 +3,9 @@
  * Функции для работы с SQLite
  */
 
+
 require_once __DIR__ . '/config.php';
+
 
 function getDB(): PDO {
     static $pdo = null;
@@ -275,6 +277,11 @@ function getTodayLeadsCount(): int {
 
 // === HELPERS ===
 
+function sendNotification(array $data) {
+    sendToTelegram($data);
+    sendToVK($data);
+}
+
 function sendToTelegram(array $data): bool {
     if (TG_BOT_TOKEN === 'YOUR_BOT_TOKEN') return false;
     
@@ -295,6 +302,39 @@ function sendToTelegram(array $data): bool {
     $result = curl_exec($ch);
     curl_close($ch);
     return $result !== false;
+}
+
+function sendToVK(array $data): bool {
+    if (VK_ACCESS_TOKEN === 'YOUR_TOKEN') return false;
+
+    $text = "🚗 Новая заявка!\n\n";
+    $text .= "👤 Имя: {$data['name']}\n";
+    $text .= "📱 Телефон: {$data['phone']}\n";
+    if (!empty($data['car'])) $text .= "🚙 Авто: {$data['car']}\n";
+    if (!empty($data['message'])) $text .= "💬 Сообщение: {$data['message']}\n";
+    $text .= "\n📅 " . date('d.m.Y H:i');
+
+    $params = [
+        'user_id' => VK_USER_ID, // или peer_id
+        'message' => $text,
+        'random_id' => rand(),
+        'access_token' => VK_ACCESS_TOKEN,
+        'v' => '5.199'
+    ];
+
+    $ch = curl_init('https://api.vk.com/method/messages.send');
+
+    curl_setopt_array($ch, [
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => http_build_query($params),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 10
+    ]);
+
+    $result = curl_exec($ch);
+    curl_close($ch);
+    $response = json_decode($result, true);
+    return !isset($response['error']);
 }
 
 function e(string $str): string {
